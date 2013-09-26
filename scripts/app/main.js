@@ -6,7 +6,8 @@ require.config({
     bootstrap: 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min',    
     jquery: 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min',
     /* Application */
-    app: 'app/app'
+    app: 'app/app',
+    directives: 'app/directives'
   },
   shim: {
     angular: {

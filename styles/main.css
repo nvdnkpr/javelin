@@ -93,17 +93,8 @@ body {
   margin: 0px;
 }
 
-.overview-section {
-  background-color: #ffffff;
-}
-
 .overview-section .section-header {
   border-top: none;
   border-bottom: 1px solid rgba(145, 24, 33, 0.25);
   margin-bottom: 25px;
-}
-
-/* Tutorial Section */
-.tutorial-section {
-  background-color: #ffffff;
 }
