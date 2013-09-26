@@ -7,171 +7,41 @@
     <title>javelin - api view templating</title>
     <!-- Styles -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/united/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/amelia/bootstrap.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/main.css">
 
     <!-- Scripts -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/require.js" data-main="scripts/app/main.js"></script>
   </head>
-  <body data-spy="scroll" data-target=".site-nav" data-offset="70">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">javelin</a>
-      </div> <!-- /.navbar-header -->
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="#about">
-              <span class="icon-home"></span>
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="icon-info-sign"></span>
-              <span>Tutorial</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Basics</a></li>
-              <li><a href="#">Advanced</a></li>
-              <li><a href="#">Using with...</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="icon-code"></span>
-              <span>Reference</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Objects</a></li>
-              <li><a href="#">Arrays</a></li>
-              <li><a href="#">Scripts</a></li>
-              <li><a href="#">Options</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon-puzzle-piece"></span>
-              <span>API</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon-terminal"></span>
-              <span>Command Line</span>
-            </a>
-          </li>
-        </ul> <!-- /.nav -->
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#">
-              <span class="icon-group"></span>
-              <span>Community</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon-github"></span>
-              <span>Github</span>
-            </a>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav>
-    <div class="container" style="text-align: center;">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="site-nav affix">
-            <ul class="nav">
-              <li><a href="#about">About</a></li>
-              <li><a href="#installation">Installation</a></li>
-              <li>
-                <a href="#tutorial">Tutorial</a>
-                <ul class="nav">
-                  <li><a href="#tut-basics">Basics</a></li>
-                  <li><a href="#tut-advanced">Advanced</a></li>
-                  <li><a href="#tut-with-tenrec">Using with Tenrec</a></li>
-                  <li><a href="#tut-with-express">Using with Express</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#reference">Reference</a>
-                <ul class="nav">
-                  <li><a href="#ref-objects">Objects</a></li>
-                  <li><a href="#ref-arrays">Arrays</a></li>
-                  <li><a href="#ref-scripts">Scripts</a></li>
-                  <li><a href="#ref-scripts">Options</a></li>
-                </ul>
-              </li>
-              <li><a href="#api">API</a></li>
-              <li><a href="#cli">Command Line</a></li>
-              <li><a href="#community">Community</a></li>
-              <li><a href="#github">Github</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="site-content col-md-9">
-          <div style="text-align: left;">
-            <!-- About -->
-            <div>
-              <div class="page-header" style="margin-top: 0px;">
-                <h3 id="about">about</h3>
-              </div>
-              <p>
-                javelin is a view templating engine for your node.js based RESTful APIs. It allows you to treat the 
-                data of your API as you would any other view. The gain here is that you can separate your view logic 
-                from your controllers and models. javelin can compile to JSON and XML natively but other builders can 
-                be plugged in to allow compiling to any other format. The syntax of javelin is inspired by the Ruby gem 
-                known as rabl.
-              </p>
-              <p>
-                javelin sets out with a few main goals in mind:
-
-                <ul>
-                  <li>An easy, familiar, way to separate the view logic from your data within RESTful APIs</li>
-                  <li>A simple, lightweight templating language that makes sense for application data</li>
-                  <li>Ability to serve your API data in different formats from the same view</li>
-                <ul>
-              </p>
-            </div> <!-- /#about -->
-            <!-- Getting Started -->
-            <div>
-              <div class="page-header">
-                <h3 id="installation">installation</h3>
-              </div>
-              <p>
-                <div class="alert alert-warning">
-                  <p>Note that javelin is not yet pushed to npm!</p>
-                </div>
-                <p>Installing javelin is as easy as installing any other node module, just use npm!</p>
-                <pre>npm install javelin</pre>
-              </p>
-            </div> <!-- /#getting-started -->
-            <!-- Tutorial -->
-            <div>
-              <div class="page-header">
-                <h3 id="tutorial">tutorial</h3>
-              </div>
-              <p>
-                <div class="alert alert-info">
-                  <p>The tutorial section is currently a work in progress!</p>
-                </div>
-              </p>
-            </div> <!-- /#tutorial -->
-          </div>
-        </div>
+  <body>
+    <div class="container">
+      <div class="site-nav-short navbar" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://os.codegrit.com/javelin/">javelin</a>
+        </div> <!-- /.navbar-header -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#overview" target="_self">Overview</a></li>
+            <li><a href="#" target="_self">Tutorial</a></li>
+            <li><a href="#" target="_self">Reference</a></li>
+            <li><a href="#" target="_self">Command Line</a></li>
+            <li><a href="https://github.com/jaylach/javelin" target="_blank">GitHub</a></li>
+          </ul>
+        </div> <!-- /.navbar-collapse -->
+      </div> <!-- /.navbar -->
+      <!-- Content Container -->
+      <div class="content-container">
+        <div class="content-section about-section clearfix" data-ng-include="'views/about.htm'"></div>
+        <div class="content-section overview-section clearfix" data-ng-include="'views/overview.htm'"></div>
       </div>
-    </div> <!-- /.container -->
+    </div>
   </body>
 </html>

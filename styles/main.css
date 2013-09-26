@@ -1,0 +1,87 @@
+
+
+/* Styles */
+body {
+  padding: 30px;
+}
+
+/* Navbar */
+.site-nav-short {
+  margin-bottom: 0px;
+
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  -moz-transition: opacity 0.75s, top 0.75s, left 0.75s, -moz-transform 0.75s;
+  -webkit-transition: opacity 0.75s, top 0.75s, left 0.75s, -webkit-transform 0.75s;
+  -o-transition: opacity 0.75s, top 0.75s, left 0.75s, -o-transform 0.75s;
+  transition: opacity 0.75s, top 0.75s, left 0.75s, transform 0.75s;
+}
+
+.navbar-fixed-top {
+  opacity: 0.82;
+
+  border-bottom: 1px solid #c3a41e;
+
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Content */
+.content-container {
+  background-color: #ffffff;
+  border: 1px solid #911821;
+  border-top: none;
+
+  border-radius: 0px 0px 4px 4px;
+
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.content-section {
+  min-height: 200px;
+  padding-bottom: 15px;
+  color: #333333;
+}
+
+.content-section:last-child {
+  padding-bottom: 0px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Sections */
+.section-header {
+  padding: 15px;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.10);
+  margin-bottom: 25px;
+}
+
+.section-header h3 {
+  margin: 0px;
+  color: #333333;
+}
+
+.section-header h3 span[class^="icon-"] {
+  color: #108a93;
+}
+
+.about-section {
+  padding: 20px;
+  background-color: #ad1d28;
+  text-align: center;
+}
+
+.about-section h1 {
+  color: #ffffff;
+  line-height: 200px;
+  margin: 0px;
+}
+
+.overview-section {
+  background-color: #ffffff;
+}
