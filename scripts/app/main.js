@@ -27,10 +27,10 @@ require([ 'angular', 'jquery', 'app' ], function(angular, $) {
   var $nav = $('.navbar');
   $win.scroll(function() {
     if ( $win.scrollTop() > ($nav.offset().top + 70) ) {
-      $nav.addClass('navbar-fixed-top navbar-inverse');
+      $nav.addClass('navbar-fixed-top');
     }
     if ( $win.scrollTop() < 25 ) {
-      $nav.removeClass('navbar-fixed-top navbar-inverse');
+      $nav.removeClass('navbar-fixed-top');
     }
   });
 });

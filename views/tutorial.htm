@@ -1,0 +1,74 @@
+<div id="tutorial">
+  <div class="section-header">
+    <h3>
+      <span class="icon-double-angle-right "></span>
+      tutorial
+    </h3>
+  </div>
+  <div class="col-md-3">
+    <p>
+      First, you need to create yourself a javelin template. Let's name it <code>index.jav</code>
+    </p>
+    <p>
+      <pre class="pre-scrollable">object @test {
+  -named
+
+  set .foo, .bar, .baz
+
+  array .qux => 'quux' {
+    set .one => '1'
+    set .two => '2'
+  }
+}</pre>
+    </p>
+  </div>
+  <div class="col-md-5">
+    <p>
+      Next, let's go ahead and write a simple node script to compile our javelin template...
+    </p>
+    <p>
+      <pre class="pre-scrollable">var javelin = require('javelin');
+
+var locals = {
+  test: {
+    foo: 'foo',
+    bar: 'bar',
+    baz: 'baz',
+    qux: [
+      { one: 'one', two: 'two' },
+      { one: 'three', two: 'four' }
+    ]
+  }
+};
+
+// Get a json-based compiler for our *.jav file
+var compile = javelin.compile('/path/to/index.jav', 'json');
+
+// Do our actual compelation
+var result = compile(locals);
+console.log(JSON.stringify(result, null, 4));</pre>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      And finally, if we did everything right, our console output should like this...
+    </p>
+    <p>
+      <pre class="pre-scrollable">{
+  "foo": "foo",
+  "bar": "bar",
+  "baz": "baz",
+  "quux": [
+    { 
+      "1": "one", 
+      "2": "two" 
+    },
+    { 
+      "1": "three", 
+      "2": "four" 
+    }
+  ]
+}</pre>
+    </p>
+  </div>
+</div>

@@ -25,13 +25,18 @@ body {
 .navbar-fixed-top {
   opacity: 0.82;
 
-  border-bottom: 1px solid #c3a41e;
+  border-bottom: 1px solid #8e1821;
 
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Content */
+.pre-scrollable {
+  white-space: pre;
+  overflow: auto;
+  word-wrap: normal;
+}
 .content-container {
   background-color: #ffffff;
   border: 1px solid #911821;
@@ -47,6 +52,10 @@ body {
   min-height: 200px;
   padding-bottom: 15px;
   color: #333333;
+}
+
+.content-section .text-muted {
+  color: rgba(0, 0, 0, 0.60);
 }
 
 .content-section:last-child {
@@ -84,4 +93,9 @@ body {
 
 .overview-section {
   background-color: #ffffff;
+}
+
+/* Tutorial Section */
+.tutorial-section {
+  background-color: #d4edef;
 }
