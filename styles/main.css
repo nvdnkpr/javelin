@@ -66,8 +66,10 @@ body {
 /* Sections */
 .section-header {
   padding: 15px;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.10);
-  margin-bottom: 25px;
+  border-top: 1px solid rgba(145, 24, 33, 0.25);
+
+  background-color: #ffffff;
+  margin-bottom: 5px;
 }
 
 .section-header h3 {
@@ -95,7 +97,13 @@ body {
   background-color: #ffffff;
 }
 
+.overview-section .section-header {
+  border-top: none;
+  border-bottom: 1px solid rgba(145, 24, 33, 0.25);
+  margin-bottom: 25px;
+}
+
 /* Tutorial Section */
 .tutorial-section {
-  background-color: #d4edef;
+  background-color: #ffffff;
 }
