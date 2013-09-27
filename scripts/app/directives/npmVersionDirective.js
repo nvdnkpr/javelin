@@ -10,11 +10,11 @@
         restrict: 'A',
         link: function(scope, element, attrs) {
           var repo = attrs['repo'];
-          var url = "https://raw.github.com/jaylach/" + repo + "/master/package.json";
+          var url = "http://rawgithub.com/jaylach/" + repo + "/master/package.json";
 
           $http.get(url)
             .success(function(data, status) {
-              $(element).html('<string>Current:</strong> ' + data);
+              $(element).html('<strong>Current:</strong> ' + data.version + '(' + data.stability + ')');
             })
             .error(function(data, status) {
               console.log(data);

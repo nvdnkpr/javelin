@@ -6,6 +6,9 @@
     require('directives/baseDirective');
     require('directives/npmVersionDirective');
 
-    return angular.module('app', [ 'app/directives' ]);
+    return angular.module('app', [ 'app/directives' ])
+            .config([ '$httpProvider', function($httpProvider) {
+              delete $httpProvider.defaults.headers.common["X-Requested-With"];
+            } ]);
   });
 })();

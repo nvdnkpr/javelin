@@ -1,0 +1,153 @@
+<div id="ref-objects">
+  <div class="small-header">
+    <h4>objects & arrays</h4>
+  </div>
+  <div>
+    <p>
+      One of the main tasks when using javelin is copying objects and arrays from the provided locals
+      to the generated data. Objects can be copied, deeply, straight from locals to the output. You can also setup
+      your view so only certain properties are copied, or properties are copied and given new names, etc.
+    </p>
+    <p>
+      To <strong>deep copy</strong> an object, named <code>foo</code>, from locals to the output...
+    </p>
+    <div class="clearfix" style="margin-bottom: 10px;">
+      <div class="col-md-6">
+        <pre>object @foo</pre>
+        <div class="alert alert-info">
+          <p>
+            the use of the @ symbol says we are accessing a top level property on the passed in locals object.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <pre>{
+  "foo": {
+    "bar": "baz"
+  }
+}</pre>
+      </div>
+    </div>
+    <p>
+      It's important to note that when javelin generates its output, it wraps everything inside a "wrapper object". 
+      This ensures that the output is totally contained within its own "container". This behavior can be overwritten, 
+      however. Overwriting this behavior also allows you to do some "fancy" things with the generated output. For 
+      instance, you could combine multiple objects and arrays into a single object.
+    </p>
+    <p>
+      We can easily <strong>change the name</strong> of an object's property on the wrapper...
+    </p>
+    <div class="clearfix" style="margin-bottom: 10px;">
+      <div class="col-md-6">
+        <pre>object @foo => "qux"</pre>
+      </div>
+      <div class="col-md-6">
+        <pre>{
+  "qux": {
+    "bar": "baz"
+  }
+}</pre>
+      </div>
+    </div>
+    <p>
+      Or, we can choose to <strong>ignore the wrapper</strong> all together...
+    </p>
+    <div class="clearfix" style="margin-bottom: 10px;">
+      <div class="col-md-6">
+        <pre>object @foo {
+  -named
+}</pre>
+      </div>
+      <div class="col-md-6">
+        <pre>{
+  "bar": "baz"
+}</pre>
+      </div>
+    </div>
+    <p>
+      Let's say we don't want to deeply copy an object, but instead want to pick and <strong>choose which properties</strong> 
+      to copy over. Javelin provides an easy way to do this, as well...
+    </p>
+    <div class="clearfix" style="margin-bottom: 10px;">
+      <div class="col-md-6">
+        <pre>object @foo {
+  # This will tell javelin not to copy any properties
+  -copy 
+
+  # This will tell javelin to cop the "bar" property
+  set .bar => 'qux'
+}</pre>
+      </div>
+      <div class="col-md-6">
+        <pre>{
+  "foo": {
+    "qux": "baz"
+  }
+}</pre>
+      </div>
+    </div>
+    <p>
+      Javelin also allows us to <strong>embed objects and arrays</strong> within object. We can create sub-objects, 
+      move objects, etc..
+    </p>
+    <div class="clearfix" style="margin-bottom: 10px;">
+      <div class="col-md-6">
+        <pre>object @foo {
+  -copy 
+
+  # Note that we can omit the set keyword...
+  .bar, .baz
+
+  object .inner {
+    .one => '1', .two => '2'
+  }
+
+  array @outer {
+    .'1' => 'one', .'2' => 'two'
+  }
+}</pre>
+      </div>
+      <div class="col-md-6">
+        <pre>{
+  "foo": {
+    "bar": "bar",
+    "baz": "baz",
+    "inner": {
+      "1": "one",
+      "2": "two"
+    },
+    "outer": [
+      { "one": "1", "two": "2" },
+      { "one": "3", "two": "4" }
+    ]
+  }
+}</pre>
+      </div>
+    </div>
+    <p>
+      <strong>Arrays</strong> work pretty much exactly like objects. The difference is the array block is executed 
+      for each item in an array, instead of only once for a single property. The other difference is arrays
+      <strong>must be named</strong>. Attempting to set an array to unnamed will result in a compilation error.
+    </p>
+    <div class="clearfix" style="margin-bottom: 10px;">
+      <div class="col-md-6">
+        <pre>array @foos {
+  # This will tell javelin not to copy any properties
+  -copy 
+
+  # This will tell javelin to cop the "bar" property
+  set .bar => 'qux'
+}</pre>
+      </div>
+      <div class="col-md-6">
+        <pre>{
+  "foos": [
+    { "qux": "foo" },
+    { "qux": "bar" },
+    { "qux": "baz" }
+  ]
+}</pre>
+      </div>
+    </div>
+  </div>
+</div>

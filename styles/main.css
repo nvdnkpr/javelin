@@ -63,13 +63,13 @@ body {
   border-radius: 0px 0px 4px 4px;
 }
 
-/* Sections */
+/* Headers */
 .section-header {
   padding: 15px;
   border-top: 1px solid rgba(145, 24, 33, 0.25);
 
   background-color: #ffffff;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .section-header h3 {
@@ -81,6 +81,18 @@ body {
   color: #108a93;
 }
 
+.small-header {
+
+}
+
+.small-header h4 {
+  margin: 0px;
+  margin-bottom: 6px;
+  color: #0d747c;
+  font-size: 20px;
+}
+
+/* Sections */
 .about-section {
   padding: 20px;
   background-color: #ad1d28;
@@ -97,4 +109,9 @@ body {
   border-top: none;
   border-bottom: 1px solid rgba(145, 24, 33, 0.25);
   margin-bottom: 25px;
+}
+
+.reference-section .reference-content {
+  padding-left: 20px;
+  padding-right: 20px;
 }
